@@ -1,0 +1,33 @@
+[
+  {
+      "id": 1,
+      "description": "Not funny!",
+      "user_id": 1,
+      "post_id": 3
+  },
+  {
+    "id": 2,
+    "description": "Okay, maybe it's a little funny.",
+    "user_id": 1,
+    "post_id": 3
+  },
+  {
+    "id": 3,
+
+    "description": "I lied. I love it.",
+    "user_id": 1,
+    "post_id": 3
+  },
+  {
+    "id": 4,
+    "description": "looks yummy",
+    "user_id": 3,
+    "post_id": 3
+  },
+  {
+    "id": 5,
+    "description": "You wanna take this outside the aquarium?? Mantis shrimp FTW!",
+    "user_id": 2,
+    "post_id": 6
+  }
+]

@@ -1,0 +1,123 @@
+{{!-- view of single post
+can edit / comment on post --}}
+<style> 
+    body {
+  background-image: url('/images/q.jpg');
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-size: cover;
+};
+</style>
+
+<div class="row">
+  <div class="col-auto">
+    <strong class="postWelc">Welcome, {{ user.username }}!</strong>
+  </div>
+</div>
+
+
+<div id="postBox">
+   <span >
+    <img src="/images/—Pngtree—sketch shrimp shrimp simple shrimp_3962342.png" id='bigShrimp' alt="shrimpo" width="60" height="60"
+      style="float:left">
+  </span>
+  <span>
+    <img src="/images/—Pngtree—sketch shrimp shrimp simple shrimp_3962342.png" id='smolShrip'  alt="shrimpo" width="60" height="60"
+      style="float:right">
+  </span>
+  <span id='pinkShrimp'>
+    <img src="/images/—Pngtree—adult marine shrimp_6027298.png" alt="shrimpo" width="60" height="60" style="float:left">
+  </span>
+ 
+
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <strong id="createNew">Create a New Post!</strong>
+
+
+      <form class="form new-project-form">
+        <div id="postyBox" class="form-group">
+          <label id="postTitle" for="project-name">post title:</label>
+          <input class="form-input" type="text" id="project-name" name="project-name" />
+        </div>
+
+
+        <div id="selectAnimal" class="field">
+          <label id="subject" class="label">Subject</label>
+          <div class="control">
+            <div class="select">
+              <select>
+                <option>Select dropdown</option>
+                <option>Cow</option>
+                <option>Giraffe</option>
+                <option>Shrimp</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <span id="imgBox">
+          <strong id="addImage">Add an image of the giraffe/cow/shrimp</strong>
+          <span class="file is-boxed">
+            <label class="file-label">
+              <input class="file-input" type="file" name="resume">
+              <span class="file-cta">
+                <span class="file-icon">
+                  <i class="fas fa-upload"></i>
+                </span>
+                <span class="file-label">
+                  Choose a file…
+                </span>
+              </span>
+            </label>
+          </span>
+        </span>
+
+
+        <span class="field">
+          <div class="control">
+            <div class="field">
+              <div class="form-group" id="theText">
+                <label id="description" for="project-desc">Description:</label>
+                <textarea class="textarea" id="project-desc" name="project-desc"
+                  placeholder="enter cow , shrimp or giraffe description here"></textarea>
+                <!-- <textarea class="form-input" id="project-desc" name="project-desc"></textarea> -->
+              </div>
+              <!-- <input class="input is-success" type="text" placeholder="Text input" value="bulma"> -->
+              <span id="littleIcon">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+                <span class="icon is-small is-right">
+                  <i class="fas fa-check"></i>
+                </span>
+              </span>
+            </div>
+          </div>
+        </span>
+        <div id="theButtons" class="field is-grouped">
+          <div class="control">
+            <button id="submitBtn" class="button is-link" type="submit"> Submit </button>
+          </div>
+          <div class="control">
+            <button class="button is-link is-light">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
+{{!-- <div class="col-md-6">
+
+ 
+
+</div> --}}
+  </div>
+</div>
+{{!-- <div id="theButtons" class="field is-grouped">
+  <div class="control">
+    <button id="submitBtn" class="button is-link" type="submit"> Submit </button>
+  </div>
+  <div class="control">
+    <button class="button is-link is-light">Cancel</button>
+  </div>
+</div> --}}
+
+<script src="/js/post.js"></script>

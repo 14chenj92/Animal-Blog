@@ -1,0 +1,69 @@
+{{!-- displays all posts only if logged in--}}
+{{!-- Otherwise show login page --}}
+<style> 
+    body {
+  background-image: url('/images/ankole-cattle.jpg');
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-size: cover;
+};
+</style>
+{{#if logged_in}}
+<section class="container card box">
+    <div class="columns">
+        <div class="column notification is-info">
+           <div class="py-4 has-text-centered title is-2"> Community Reviews
+            </div>
+        </div>
+    </div>
+</section>
+{{#each posts as |post| }}
+<section class="container commcard">
+    <div class="pb-6 columns">
+        <div class="column is-quarter is-offset-1 notification is-info">
+            {{!-- <main> --}}
+                <div class="card equal-height">
+                    <div class="card-image has-text-centered">
+                        <figure class="image is-inline-block">
+                            <img src="{{ post.img }}" alt="image of user cow or giraffe" style="height: 200px"/>
+                        </figure>
+                    </div>
+                </div>
+        </div>
+        <div class="column is-half is-offset-1 notification is-info">
+                <section class="card-content">
+                    <article class="message">
+
+                     <div class="message-header">
+                         <p><a href="/post/{{post.id}}">{{post.title}}</a></p>
+                     </div>
+                     <div class="message-body">
+                        {{post.description}}
+                     </div>
+                      <div>
+                        <p class="createdbyuser">Created by {{post.user.username}} on {{ format_date post.created_on }}</p>
+                     </div>
+
+                   </article>
+                </section>
+
+            {{!-- </main> --}}
+        </div>
+    </div>
+</section>
+{{/each}}
+<section class="container card">
+    <div class="columns">
+        <div class="column notification is-info">
+            <div class="column">
+                <div class="box">
+                    <p class="title is-5 has-text-centered">
+                        <button class="button my-3 is-rounded search-btn tag is-dark is-large"><a href="/post">Add Post</a></button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+     {{/if}}
