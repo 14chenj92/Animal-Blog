@@ -1,83 +1,127 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Registry</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-  <link rel="stylesheet" type="text/css" href="./css/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Registry</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  </head>
 
-<body>
-  {{!-- <header class="section hero-banner">
-    <nav class="level is-mobile">
-      <button class="button is-info level-item has-text-centered home-page-button" id="homebtn"><a href="/">Home</a></button>
-      <button class="button is-info level-item has-text-centered home-page-button" id="homebtn"><a href="/post">Create Post</a></button>
-      <button class="button is-info level-item has-text-centered home-page-button" id="homebtn"><a href="/profile">Profile</a></button>
+  <body>
+    {{!-- <header class="section hero-banner">
+      <nav class="level is-mobile">
+        <button
+          class="button is-info level-item has-text-centered home-page-button"
+          id="homebtn"
+        ><a href="/">Home</a></button>
+        <button
+          class="button is-info level-item has-text-centered home-page-button"
+          id="homebtn"
+        ><a href="/post">Create Post</a></button>
+        <button
+          class="button is-info level-item has-text-centered home-page-button"
+          id="homebtn"
+        ><a href="/profile">Profile</a></button>
         {{#if logged_in}}
-        <button class="button is-danger level-item has-text-centered home-page-button" id="logout">Logout</button>
+          <button
+            class="button is-danger level-item has-text-centered home-page-button"
+            id="logout"
+          >Logout</button>
         {{else}}
-        <button class="button level-item has-text-centered is-success home-page-button"id="homebtn" ><a href="/login">Login</a></button>
+          <button
+            class="button level-item has-text-centered is-success home-page-button"
+            id="homebtn"
+          ><a href="/login">Login</a></button>
         {{/if}}
-    </nav>
-  </header> --}}
-  <nav class="navbar is-info" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-
-  <div id="navbarBasicExample" class="navbar-menu is-flex is-justify-content-center">
-    <div class="navbar is-info">
-      <a class="navbar-item">
-        Home
-      </a>
-
-      <a class="navbar-item">
-        Documentation
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More
+      </nav>
+    </header> --}}
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </a>
+      </div>
 
-        <div class="navbar-dropdown">
-          <a class="navbar-item">
-            About
+      <div
+        id="navbarBasicExample"
+        class="navbar-menu is-flex is-justify-content-space-around"
+      >
+        <div class="navbar">
+          <a class="navbar-item" href="/">
+            Home
           </a>
-          <a class="navbar-item is-selected">
-            Jobs
+
+          <a class="navbar-item" href="/post">
+            Create Post
           </a>
-          <a class="navbar-item">
-            Contact
+
+          <a class="navbar-item" href="/profile">
+            Profile
           </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item">
-            Report an issue
-          </a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More
+            </a>
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                About
+              </a>
+              <a class="navbar-item is-selected">
+                Jobs
+              </a>
+              <a class="navbar-item">
+                Contact
+              </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item">
+                Report an issue
+              </a>
+            </div>
+          </div>
+          {{#if logged_in}}
+            <button
+              class="button is-danger level-item has-text-centered home-page-button"
+              id="logout"
+            >Logout</button>
+          {{else}}
+            <button
+              class="button level-item has-text-centered is-success home-page-button"
+              id="homebtn"
+            ><a href="/login">Login</a></button>
+          {{/if}}
         </div>
       </div>
-    </div>
-  </div>
-</nav>
+    </nav>
 
-  <main class="container container-fluid mt-5">
-    {{{ body }}}
-  </main>
-  <footer>
+    <main class="container container-fluid mt-5">
+      {{{body}}}
+    </main>
+    <footer>
 
-  </footer>
+    </footer>
 
-  <!-- Only include the logout script if the user is logged in -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
+    <!-- Only include the logout script if the user is logged in -->
+    {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+  </body>
 </html>

@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 .navbar-menu {
+  justify-content: space-around;
 }
 
 #smolShrip {
