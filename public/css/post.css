@@ -1,0 +1,14 @@
+.create-post {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.post-title {
+    display:flex;
+    align-items: center;
+    gap:1%;
+}
+
+input {
+    height:25px;
+}
