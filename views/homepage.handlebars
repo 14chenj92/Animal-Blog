@@ -1,69 +1,61 @@
-{{!-- displays all posts only if logged in--}}
-{{!-- Otherwise show login page --}}
-<style> 
-    body {
-  background-image: url('/images/ankole-cattle.jpg');
-  background-repeat: no-repeat;
-  background-attachment:fixed;
-  background-size: cover;
-};
-</style>
+{{! displays all posts only if logged in}}
+{{! Otherwise show login page }}
 {{#if logged_in}}
-<section class="container card box">
-    <div class="columns">
-        <div class="column notification is-info">
-           <div class="py-4 has-text-centered title is-2"> Community Reviews
-            </div>
+  <h1>Community Posts</h1>
+  {{#each posts as |post|}}
+    <div class="community-post">
+      <div class="community-image">
+        <img src="{{post.img}}" alt="sample" />
+      </div>
+      <div class="community-info">
+        <h2>{{post.title}}</h2>
+        <div class="creator-details">
+          <img class="randomImage" />
+          <h3>Created By:
+            {{post.user.username}}
+            on
+            {{format_date post.created_on}}</h3>
         </div>
+        <p>{{post.description}}</p>
+        <a href="/post/{{post.id}}">
+          <button class="main-button">
+            <span>View</span>
+            <svg
+              width="34"
+              height="34"
+              viewBox="0 0 74 74"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="37"
+                cy="37"
+                r="35.5"
+                stroke="black"
+                stroke-width="3"
+              ></circle>
+              <path
+                d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"
+                fill="black"
+              ></path>
+            </svg>
+          </button>
+        </a>
+      </div>
     </div>
-</section>
-{{#each posts as |post| }}
-<section class="container commcard">
-    <div class="pb-6 columns">
-        <div class="column is-quarter is-offset-1 notification is-info">
-            {{!-- <main> --}}
-                <div class="card equal-height">
-                    <div class="card-image has-text-centered">
-                        <figure class="image is-inline-block">
-                            <img src="{{ post.img }}" alt="image of user cow or giraffe" style="height: 200px"/>
-                        </figure>
-                    </div>
-                </div>
-        </div>
-        <div class="column is-half is-offset-1 notification is-info">
-                <section class="card-content">
-                    <article class="message">
 
-                     <div class="message-header">
-                         <p><a href="/post/{{post.id}}">{{post.title}}</a></p>
-                     </div>
-                     <div class="message-body">
-                        {{post.description}}
-                     </div>
-                      <div>
-                        <p class="createdbyuser">Created by {{post.user.username}} on {{ format_date post.created_on }}</p>
-                     </div>
+  {{/each}}
+  <div class="add-section">
+    <button class="add-post"><a href="/post">+</a></button>
+  </div>
+{{/if}}
 
-                   </article>
-                </section>
-
-            {{!-- </main> --}}
-        </div>
-    </div>
-</section>
-{{/each}}
-<section class="container card">
-    <div class="columns">
-        <div class="column notification is-info">
-            <div class="column">
-                <div class="box">
-                    <p class="title is-5 has-text-centered">
-                        <button class="button my-3 is-rounded search-btn tag is-dark is-large"><a href="/post">Add Post</a></button>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-     {{/if}}
+<script>
+  var imageList = [ "../images/icons/turtle.png", "../images/icons/cat.png",
+  "../images/icons/dog.png","../images/icons/bird.png",
+  "../images/icons/fish.png" ]; var imgElements =
+  document.querySelectorAll(".randomImage");
+  imgElements.forEach(function(imgElement) { var randomIndex =
+  Math.floor(Math.random() * imageList.length); imgElement.src =
+  imageList[randomIndex]; });
+</script>

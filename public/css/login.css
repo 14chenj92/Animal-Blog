@@ -1,20 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
-
-html,body{
-    height: 100%;
-    width: 100%;
-  }
-
 .loginbox{
-    place-items: center;
-    display: grid;
+display: flex;
+justify-content: center;
+margin-top: 5%;
+margin-bottom: 5%;
 }
-
-.fas, .far{
-    margin-top: 30%;
-}
-
 
 .wrapper{
   overflow: hidden;
@@ -51,7 +42,6 @@ html,body{
 .slide-controls .slide{
   height: 100%;
   width: 100%;
-  color: #fff;
   font-size: 18px;
   font-weight: 500;
   text-align: center;
@@ -70,7 +60,7 @@ html,body{
   left: 0;
   z-index: 0;
   border-radius: 5px;
-  background: -webkit-linear-gradient(right, #45abb2, #294bbb, #259fb4);
+  background: -webkit-linear-gradient(right, var(--main-color), var(--second-color), var(--main-color));
   transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
 }
 input[type="radio"]{
@@ -80,7 +70,6 @@ input[type="radio"]{
   left: 50%;
 }
 #signup:checked ~ label.signup{
-  color: #fff;
   cursor: default;
   user-select: none;
 }
@@ -168,7 +157,7 @@ form .btn .btn-layer{
   width: 300%;
   position: absolute;
   left: -100%;
-  background: -webkit-linear-gradient(right, #45abb2, #294bbb, #259fb4, #2b3cd3);
+  background: -webkit-linear-gradient(right, #45abb2,  var(--main-color), var(--second-color), var(--main-color));
   border-radius: 5px;
   transition: all 0.4s ease;;
 }
@@ -182,11 +171,20 @@ form .btn input[type="submit"]{
   position: relative;
   background: none;
   border: none;
-  color: #fff;
   padding-left: 0;
   border-radius: 5px;
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
-  font-family: 'Edu NSW ACT Foundation';
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  gap: 3%;
+}
+
+i {
+  width: 20px;
+  height: 20px;
 }
