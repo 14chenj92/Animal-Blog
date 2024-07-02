@@ -1,55 +1,68 @@
-{{! view of single post
-can edit / comment on post }}
 
-<h1>Welcome {{user.username}}!</h1>
+<div class="row">
+  <div class="col-auto">
+    <strong class="postWelc">Welcome, {{ user.username }}!</strong>
+  </div>
+</div>
 
-<div class="container">
-  <div class="create-post">
-    <h2>Create a New Post</h2>
-    <div class="post-title">
-      <p>Post Title:</p>
-      <input type="text" />
-    </div>
-    <h4>Description:</h4>
-    <textarea></textarea>
-    <span id="imgBox">
-      <strong id="addImage">Add an image of the giraffe/cow/shrimp</strong>
-      <span class="file is-boxed">
-        <label class="file-label">
-          <input class="file-input" type="file" name="resume" />
-          <span class="file-cta">
-            <span class="file-icon">
-              <i class="fas fa-upload"></i>
-            </span>
-            <span class="file-label">
-              Choose a file…
-            </span>
+
+<div id="postBox">
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <strong id="createNew">Create a New Post!</strong>
+
+
+      <form class="form new-project-form">
+        <div id="postyBox" class="form-group">
+          <label id="postTitle" for="project-name">post title:</label>
+          <input class="form-input" type="text" id="project-name" name="project-name" />
+        </div>
+        <span id="imgBox">
+          <strong id="addImage">Add an image of the giraffe/cow/shrimp</strong>
+          <span class="file is-boxed">
+            <label class="file-label">
+              <input class="file-input" type="file" name="resume">
+            </label>
           </span>
-        </label>
-      </span>
-    </span>
-    <button class="main-button">
-      <span>Submit</span>
-      <svg
-        width="34"
-        height="34"
-        viewBox="0 0 74 74"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle
-          cx="37"
-          cy="37"
-          r="35.5"
-          stroke="black"
-          stroke-width="3"
-        ></circle>
-        <path
-          d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"
-          fill="black"
-        ></path>
-      </svg>
-    </button>
+        </span>
+
+
+        <span class="field">
+          <div class="control">
+            <div class="field">
+              <div class="form-group" id="theText">
+                <label id="description" for="project-desc">Description:</label>
+                <textarea class="textarea" id="project-desc" name="project-desc"
+                  placeholder="enter cow , shrimp or giraffe description here"></textarea>
+                <!-- <textarea class="form-input" id="project-desc" name="project-desc"></textarea> -->
+              </div>
+              <!-- <input class="input is-success" type="text" placeholder="Text input" value="bulma"> -->
+              <span id="littleIcon">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+                <span class="icon is-small is-right">
+                  <i class="fas fa-check"></i>
+                </span>
+              </span>
+            </div>
+          </div>
+        </span>
+        <div id="theButtons" class="field is-grouped">
+          <div class="control">
+            <button id="submitBtn" class="button is-link" type="submit"> Submit </button>
+          </div>
+          <div class="control">
+            <button class="button is-link is-light">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
+{{!-- <div class="col-md-6">
+
+ 
+
+</div> --}}
   </div>
 </div>
 

@@ -4,7 +4,7 @@ const newPostHandler = async (event) => {
 
   const title = document.querySelector('#project-name').value.trim();
   const description = document.querySelector('#project-desc').value.trim();
-  const image = document.querySelector('.file-input')//add;
+  const image = document.querySelector('.file-input')
 
   console.log(title, description)
   if (title && description) {
