@@ -37,7 +37,13 @@
 } */
 
 .homepage-container {
-  display:flex;
+}
+
+.community-posts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Ensures 2 cards per row */
+  gap: 30px;
+  margin: 5%;
 }
 
 .randomImage {
@@ -54,9 +60,11 @@
   margin-right: 5%;
   margin-top: 7%;
   margin-bottom: 7%;
-  display: flex;
   padding:1%;
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
 }
 
 .community-image {
@@ -65,8 +73,7 @@
 
 .community-image img {
   border-radius: 10px;
-  margin: 8%;
-  width: 300px;
+  width: 500px;
   height: 300px;
 }
 
@@ -78,13 +85,16 @@
 .community-info h2:hover {
 }
 
-.community-info h3 {
-  margin-left: 1%;
+
+.community-info a {
+  display: flex;
+  justify-content: center;
 }
 
 .creator-details {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .creator-details span{
