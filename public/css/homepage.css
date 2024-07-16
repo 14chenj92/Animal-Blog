@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 
 .nav-container {
   display: flex;
@@ -31,14 +34,6 @@
   width: 250px;
 }
 
-/* .text img {
-  width: 25px;
-  height: 25px;
-} */
-
-.homepage-container {
-}
-
 .community-posts {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Ensures 2 cards per row */
@@ -51,20 +46,31 @@
   border-radius: 8px;
   height: 30px;
   width: 30px;
+  margin-right: 5px;
 }
 
 .community-post {
-  border-radius: 8px;
-  border: 1px solid black;
+  /* border-radius: 8px;
+  border: 1px solid black; */
   margin-left: 5%;
   margin-right: 5%;
-  margin-top: 7%;
   margin-bottom: 7%;
-  padding:1%;
+  padding: 1%;
   display: flex;
   flex-direction: column;
   align-items: center; 
   text-align: center;
+}
+
+.community-post {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+}
+
+.community-post.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .community-image {
@@ -97,9 +103,8 @@
   justify-content: center;
 }
 
-.creator-details span{
+.creator-details span {
   color: var(--second-color);
-  font-size: 15px;
 }
 
 .add-section {

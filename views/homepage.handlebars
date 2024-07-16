@@ -1,13 +1,11 @@
-{{! displays all posts only if logged in}}
-{{! Otherwise show login page }}
 {{#if logged_in}}
 <h1>Community Posts</h1>
 <div class="homepage-container">
-  <div class="community-posts">
+  <div id="community-posts-container" class="community-posts">
     {{#each posts as |post|}}
     <div class="community-post">
       <div class="community-image">
-        <img src="{{post.img}}" alt="sample" />
+        <img src="{{post.img}}" alt="animal-image" />
       </div>
       <div class="community-info">
         <h2>{{post.title}}</h2>
@@ -29,6 +27,28 @@
     </div>
     {{/each}}
   </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var posts = document.querySelectorAll('.community-post');
+
+  var observer = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  posts.forEach(function(post) {
+    observer.observe(post);
+  });
+});
+</script>
   {{!-- <aside class="featured-post">
     <h2>Featured Posts</h2>
   <div class="featured-details">
@@ -65,3 +85,4 @@
   Math.floor(Math.random() * imageList.length); imgElement.src =
   imageList[randomIndex]; });
 </script>
+<script src="script.js"></script>

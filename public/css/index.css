@@ -2,7 +2,7 @@
 
 body {
   /* border: 1px black solid; */
-  /* background-color: #f3df864f; */
+  background-color: #EAEAEE;
 }
 
 :root {
@@ -10,7 +10,7 @@ body {
   --font2: "Poppins";
   --font3: "Inter";
   --main-color: #a7c7e7;
-  --second-color: #7faedc;
+  --second-color: #2887C7;
 }
 
 a {
@@ -20,15 +20,15 @@ a {
 
 h1 {
   font-family: var(--font2);
-  font-size: 60px;
+  font-size: 46px;
   text-align: center;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 h2 {
   font-family: var(--font1);
-  font-size: 30px;
-  font-weight: 450;
+  font-size: 28px;
+  font-weight: 500;
 }
 
 h3 {
@@ -37,10 +37,15 @@ h3 {
   font-weight: 400;
 }
 
+
 p {
   font-family: var(--font2);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
+}
+
+span{
+  font-size: 15px;
 }
 
 

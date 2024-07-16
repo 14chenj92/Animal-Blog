@@ -1,6 +1,5 @@
-.create-post {
-    margin-left: 10%;
-    margin-right: 10%;
+#postBox {
+    
 }
 
 .post-title {
@@ -10,4 +9,28 @@
 
 input {
     height:25px;
+}
+
+#theButtons {
+    margin-top: 2%;
+    display: flex;
+}
+
+.single-post {
+    margin:5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+}
+
+.post-image {
+    border-radius: 10px;
+    width: 500px;
+    height: 300px;
+  }
+
+.heart-icon {
+    width: 20px;
+    height: 20px;
 }
