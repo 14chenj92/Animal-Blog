@@ -5,9 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "node seeds/index.js",
     "start": "node server.js",
-    "build:css": "tailwindcss build public/css/tailwind.css -o public/css/tailwind.css"
+    "seed": "node seeds/index.js",
+    "postdeploy": "npm run seed"
   },
   "keywords": [],
   "author": "",
