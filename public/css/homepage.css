@@ -50,8 +50,6 @@ html {
 }
 
 .community-post {
-  /* border-radius: 8px;
-  border: 1px solid black; */
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 7%;
@@ -60,9 +58,6 @@ html {
   flex-direction: column;
   align-items: center; 
   text-align: center;
-}
-
-.community-post {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease-in, transform 0.5s ease-in;
@@ -79,8 +74,9 @@ html {
 
 .community-image img {
   border-radius: 10px;
+  width: 100%; /* Make image responsive */
   width: 500px;
-  height: 300px;
+  height: 300px; /* Maintain aspect ratio */
 }
 
 .community-info {
@@ -89,8 +85,8 @@ html {
 }
 
 .community-info h2:hover {
+  /* Add hover effects if needed */
 }
-
 
 .community-info a {
   display: flex;
@@ -115,7 +111,7 @@ html {
 }
 
 .add-post {
-  width: 400px;
+  width: 100px;
   height: 100px;
   font-size: 60px;
 }
@@ -125,7 +121,7 @@ html {
 }
 
 .featured-post {
-  border-radius: 8px;;
+  border-radius: 8px;
   max-height: 300px;
   flex: 0 0 25%;
   margin-left: 3%;
@@ -151,7 +147,6 @@ html {
   display: block;
   width: 300px;
 }
-
 
 .main-button {
   cursor: pointer;
@@ -184,4 +179,62 @@ html {
 .main-button:active {
   transform: scale(0.95);
 }
-  
+
+/* Mobile design */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-items {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .community-posts {
+    grid-template-columns: 1fr; /* Single column layout */
+    margin: 2%;
+    gap: 20px;
+  }
+
+  .community-image img {
+    width: 500px; /* Make image responsive */
+    height: 300px; /* Maintain aspect ratio */
+  }
+
+  .featured-post {
+    flex: 1 1 100%;
+    max-height: none;
+    margin: 10px 0;
+  }
+
+  .add-post {
+    width: 80px;
+    height: 80px;
+    font-size: 50px;
+  }
+
+  .featured-date {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-title img {
+    width: 200px;
+  }
+
+  .community-image img {
+    width: 300px; /* Make image responsive */
+    height: 200px; /* Maintain aspect ratio */
+  }
+  .main-button {
+    font-size: 12px;
+  }
+
+  .main-button > svg {
+    width: 24px;
+    margin-left: 5px;
+  }
+}

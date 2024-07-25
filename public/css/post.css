@@ -1,5 +1,8 @@
 #postBox {
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
 }
 
 .post-title {
@@ -12,8 +15,9 @@ input {
 }
 
 #theButtons {
-    margin-top: 2%;
+    margin-top: 8%;
     display: flex;
+    gap: 10px;
 }
 
 .single-post {
@@ -34,3 +38,11 @@ input {
     width: 20px;
     height: 20px;
 }
+
+.file-label {
+    margin-left: 15%;
+}
+
+
+
+  
