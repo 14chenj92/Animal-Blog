@@ -43,6 +43,13 @@ input {
     margin-left: 15%;
 }
 
+.new-project-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+}
+
 
 
   

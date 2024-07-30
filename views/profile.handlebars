@@ -1,11 +1,8 @@
 <link rel="stylesheet" href="css/profile.css">
-{{!-- display userprofile along with posts they've made --}}
 {{#if logged_in}}
 <h1>Welcome {{username}}!</h1>
 
     <h2 style="text-align: center;">My Posts</h2>
-
-    {{!-- <div class="is-flex is-justify-content-center"> --}}
         <div class="grid-container">
             {{#each posts}}
             <div class="card">
@@ -49,8 +46,6 @@
             {{else}}
             <a class="is-flex is-justify-content-center pt-6" href="/login">You must login first to view this page</a>
             {{/if}}
-
-
         </div>
 
 <script src="./js/profile.js"></script>
